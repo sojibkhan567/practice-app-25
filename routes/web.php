@@ -44,3 +44,14 @@ Route::get('/products', [ProductController::class, 'index'])->name('products');
 
 # drozone image upload route
 Route::get('/media-library', [AdminController::class, 'uploadImage']);
+
+Route::view('/dashboard', 'index');
+
+
+use App\Http\Controllers\MailController;
+
+//Route::get('/send-test-email', [MailController::class, 'sendTestEmail']);
+// Show the upload form
+Route::get('/upload', [MailController::class, 'showUploadForm'])->name('upload.form');
+// Handle form submission
+Route::post('/send-email-with-attachment', [MailController::class, 'sendEmailWithAttachment'])->name('send.email.with.attachment');
