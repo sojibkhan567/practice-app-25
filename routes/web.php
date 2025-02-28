@@ -41,3 +41,6 @@ Route::middleware('auth')->group(function () {
 require __DIR__ . '/auth.php';
 
 Route::get('/products', [ProductController::class, 'index'])->name('products');
+
+# drozone image upload route
+Route::get('/media-library', [AdminController::class, 'uploadImage']);
