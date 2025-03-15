@@ -15,4 +15,9 @@ class AdminController extends Controller
     {
         return view('image-upload');
     }
+
+    public function storeImage(Request $request)
+    {
+        info($request->all());
+    }
 }

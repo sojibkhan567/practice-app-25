@@ -44,6 +44,7 @@ Route::get('/products', [ProductController::class, 'index'])->name('products');
 
 # drozone image upload route
 Route::get('/media-library', [AdminController::class, 'uploadImage']);
+Route::post('/media-library/store', [AdminController::class, 'storeImage'])->name('media.store');
 
 Route::view('/dashboard', 'index');
 
